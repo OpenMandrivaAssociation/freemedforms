@@ -3,15 +3,14 @@
 %define Werror_cflags	%nil
 
 Name:		freemedforms
-Version:	0.6.0
+Version:	0.7.0
 Release:	1
 License:	GPLv3+
 Summary:	Open-source Prescriber
 Url:		http://www.freemedforms.com
 Group:		Office
 Source0:	http://freemedforms.googlecode.com/files/freemedformsfullsources-%{version}.tgz
-Patch0:		freemedforms-0.6.0-mdv-use-system-quazip.patch
-Patch1:		freemedforms-0.6.0-desktop.patch
+Patch0:		freemedforms-0.7.0-mdv-use-system-quazip.patch
 BuildRequires:	doxygen
 BuildRequires:	qt4-devel >= 4.6.2
 #BuildRequires:	quazip-devel
@@ -35,7 +34,7 @@ It can be used for clinical research and patient database management.
 %package devel
 Summary:	Development files for %{oname}
 Group:		Development/C++
-Requires:	%{name} = %{EVRD}
+Requires:	%{name} = %{version}
 
 %description devel
 FreeMedForms is a free, open source, multiplatform medical forms manager.
@@ -44,7 +43,6 @@ It can be used for clinical research and patient database management.
 %prep
 %setup -q -n %{name}-%{version}
 #patch0 -p1
-%patch1 -p1
 dos2unix *.txt
 
 %build
@@ -59,8 +57,8 @@ lrelease global_resources/translations/*.ts
 
 # files for the doc package
 %__install -d %{buildroot}%{_docdir}/%{name}
-%__mv %{buildroot}%{_datadir}/%{name}/doc/%{name}/* %{buildroot}%{_docdir}/%{name}
-%__rm -rf %{buildroot}%{_datadir}/%{name}/doc
+%__mv %{buildroot}%{_docdir}/freemedforms-project/freemedforms/ %{buildroot}%{_docdir}/
+%__rm -rf %{buildroot}%{_docdir}/freemedforms-project/
 
 # Fix permissions for directories
 find %{buildroot} -type d -exec chmod 755 \;
@@ -68,73 +66,18 @@ find %{buildroot} -type d -exec chmod 755 \;
 %files
 %defattr(-,root,root,755)
 %{_bindir}/%{name}
-%{_libdir}/%{name}/*.so.1*
-%{_datadir}/applications/%{oname}.desktop
+#%{_libdir}/%{name}/*.so.1*
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.svg
-%{_libdir}/%{name}/libAccountBase.so
-%{_libdir}/%{name}/libAccount.so
-%{_libdir}/%{name}/libAgenda.so
-%{_libdir}/%{name}/libBaseWidgets.so
-%{_libdir}/%{name}/libCategory.so
-%{_libdir}/%{name}/libCore.so
-%{_libdir}/%{name}/libDrugsBase.so
-%{_libdir}/%{name}/libDrugs.so
-%{_libdir}/%{name}/libFormManager.so
-%{_libdir}/%{name}/libGir.so
-%{_libdir}/%{name}/libICD.so
-%{_libdir}/%{name}/libListView.so
-%{_libdir}/%{name}/libMainWindow.so
-%{_libdir}/%{name}/libPadTools.so
-%{_libdir}/%{name}/libPatientBase.so
-%{_libdir}/%{name}/libPMH.so
-%{_libdir}/%{name}/libPrinter.so
-%{_libdir}/%{name}/libTemplates.so
-%{_libdir}/%{name}/libTextEditor.so
-%{_libdir}/%{name}/libUserManager.so
-%{_libdir}/%{name}/libXmlIO.so
-%{_libdir}/%{name}/libZipCodes.so
+%{_libdir}/%{name}/*.so
 %{_libdir}/%{name}/*.pluginspec
+%{_libdir}/%{name}-common/*.so.*
 %{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 %doc COPYING.txt README.txt
 
 %files devel
-%{_libdir}/%{name}/libAggregation.so
-%{_libdir}/%{name}/libCalendar.so
-%{_libdir}/%{name}/libExtensionSystem.so
-%{_libdir}/%{name}/libMedicalUtils.so
-%{_libdir}/%{name}/libquazip.so
-%{_libdir}/%{name}/libTranslationUtils.so
-%{_libdir}/%{name}/libUtils.so
+%{_libdir}/%{name}-common/*.so
 
 %files data
 %defattr(644,root,root,755)
-%dir %{_datadir}/%{name}/databases
-%dir %{_datadir}/%{name}/forms
-%dir %{_datadir}/%{name}/profiles
-%dir %{_datadir}/%{name}/sql
-%dir %{_datadir}/%{name}/package_helpers
-%dir %{_datadir}/%{name}/pixmap/64x64
-%dir %{_datadir}/%{name}/textfiles
-%dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/pixmap
-%dir %{_datadir}/%{name}/pixmap/16x16
-%dir %{_datadir}/%{name}/pixmap/16x16/flags
-%dir %{_datadir}/%{name}/pixmap/32x32
-%dir %{_datadir}/%{name}/pixmap/64x64
-%dir %{_datadir}/%{name}/pixmap/splashscreens
-%dir %{_datadir}/%{name}/pixmap/svg
-%dir %{_datadir}/%{name}/translations
-%{_datadir}/%{name}/databases
-%{_datadir}/%{name}/forms
-%{_datadir}/%{name}/profiles
-%{_datadir}/%{name}/sql
-%{_datadir}/%{name}/pixmap/16x16/*.png
-%{_datadir}/%{name}/pixmap/16x16/flags/*.png
-%{_datadir}/%{name}/pixmap/32x32/*.png
-%{_datadir}/%{name}/pixmap/64x64/*.png
-%{_datadir}/%{name}/pixmap/64x64/*.jpg
-%{_datadir}/%{name}/pixmap/splashscreens/*.png
-%{_datadir}/%{name}/pixmap/svg/*.svg
-%{_datadir}/%{name}/translations/*.qm
-%{_datadir}/%{name}/textfiles/*
-%{_datadir}/%{name}/package_helpers/*
+%{_datadir}/%{name}
