@@ -3,7 +3,7 @@
 %define Werror_cflags	%nil
 
 Name:		freemedforms
-Version:	0.7.0
+Version:	0.7.3
 Release:	1
 License:	GPLv3+
 Summary:	Open-source Prescriber
