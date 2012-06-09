@@ -3,7 +3,7 @@
 %define Werror_cflags	%nil
 
 Name:		freemedforms
-Version:	0.7.3
+Version:	0.7.4
 Release:	1
 License:	GPLv3+
 Summary:	Electronical Medical Record
