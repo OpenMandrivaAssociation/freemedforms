@@ -1,9 +1,8 @@
-%define oname		FreeMedForms
 %define major		1
 %define Werror_cflags	%nil
 
 Name:		freemedforms
-Version:	0.7.4
+Version:	0.7.6
 Release:	1
 License:	GPLv3+
 Summary:	Electronical Medical Record
@@ -33,10 +32,10 @@ FreeMedForms is intended to be used:
 * in clinical research groups.
 
 %package common
-Summary:		Common libraries for %{oname} and its derivatives
+Summary:		Common libraries for FreeMedForms and its derivatives
 
 %description common
-This package contains common libraries used by %{oname} and its derivatives
+This package contains common libraries used by FreeMedForms and its derivatives
 including FreeDiams.
 
 %package -n freediams
@@ -70,7 +69,7 @@ The interactions database (source: AFSSAPS) give access to many informations:
 * management of the interaction
 
 %package devel
-Summary:	Development files for %{oname}
+Summary:	Development files for FreeMedForms
 Group:		Development/C++
 Requires:	%{name} = %{version}
 
@@ -79,7 +78,7 @@ FreeMedForms is a free, open source, multiplatform medical forms manager.
 It can be used for clinical research and patient database management.
 
 %package doc-en
-Summary:	English documentation for %{oname}
+Summary:	English documentation for FreeMedForms
 Requires:	locales-en
 Provides:	%{name}-doc = %{EVRD}
 
@@ -87,7 +86,7 @@ Provides:	%{name}-doc = %{EVRD}
 FreeMedForms documentation in English.
 
 %package doc-fr
-Summary:	French documentation for %{oname}
+Summary:	French documentation for FreeMedForms
 Requires:	locales-fr
 Provides:	%{name}-doc = %{EVRD}
 
