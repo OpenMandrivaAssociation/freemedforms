@@ -1,0 +1,86 @@
+Index: freemedforms-0.7.3/freetoolbox/plugins/drugsdb/belgishdrugsdatabase.cpp
+===================================================================
+--- freemedforms-0.7.3.orig/freetoolbox/plugins/drugsdb/belgishdrugsdatabase.cpp
++++ freemedforms-0.7.3/freetoolbox/plugins/drugsdb/belgishdrugsdatabase.cpp
+@@ -38,7 +38,7 @@
+ #include <utils/global.h>
+ #include <utils/log.h>
+ #include <utils/database.h>
+-#include <quazip/global.h>
++#include <quazip/quazip_global.h>
+ #include <extensionsystem/pluginmanager.h>
+ #include <translationutils/constants.h>
+ #include <translationutils/trans_drugs.h>
+Index: freemedforms-0.7.3/freetoolbox/plugins/drugsdb/canadiandrugsdatabase.cpp
+===================================================================
+--- freemedforms-0.7.3.orig/freetoolbox/plugins/drugsdb/canadiandrugsdatabase.cpp
++++ freemedforms-0.7.3/freetoolbox/plugins/drugsdb/canadiandrugsdatabase.cpp
+@@ -39,7 +39,7 @@
+ #include <utils/database.h>
+ #include <utils/httpdownloader.h>
+ #include <extensionsystem/pluginmanager.h>
+-#include <quazip/global.h>
++#include <quazip/quazip_global.h>
+ #include <translationutils/constants.h>
+ #include <translationutils/trans_drugs.h>
+ 
+Index: freemedforms-0.7.3/freetoolbox/plugins/drugsdb/fdadrugsdatabasecreator.cpp
+===================================================================
+--- freemedforms-0.7.3.orig/freetoolbox/plugins/drugsdb/fdadrugsdatabasecreator.cpp
++++ freemedforms-0.7.3/freetoolbox/plugins/drugsdb/fdadrugsdatabasecreator.cpp
+@@ -39,7 +39,7 @@
+ #include <utils/database.h>
+ #include <utils/httpdownloader.h>
+ #include <extensionsystem/pluginmanager.h>
+-#include <quazip/global.h>
++#include <quazip/quazip_global.h>
+ #include <translationutils/constants.h>
+ #include <translationutils/trans_drugs.h>
+ 
+Index: freemedforms-0.7.3/freetoolbox/plugins/drugsdb/frenchdrugsdatabasecreator.cpp
+===================================================================
+--- freemedforms-0.7.3.orig/freetoolbox/plugins/drugsdb/frenchdrugsdatabasecreator.cpp
++++ freemedforms-0.7.3/freetoolbox/plugins/drugsdb/frenchdrugsdatabasecreator.cpp
+@@ -41,7 +41,7 @@
+ #include <utils/database.h>
+ #include <utils/httpdownloader.h>
+ #include <extensionsystem/pluginmanager.h>
+-#include <quazip/global.h>
++#include <quazip/quazip_global.h>
+ #include <translationutils/constants.h>
+ #include <translationutils/trans_drugs.h>
+ 
+Index: freemedforms-0.7.3/plugins/icdplugin/icddownloader.cpp
+===================================================================
+--- freemedforms-0.7.3.orig/plugins/icdplugin/icddownloader.cpp
++++ freemedforms-0.7.3/plugins/icdplugin/icddownloader.cpp
+@@ -40,7 +40,7 @@
+ #include <translationutils/trans_msgerror.h>
+ #include <translationutils/trans_filepathxml.h>
+ 
+-#include <quazip/global.h>
++#include <quazip/quazip_global.h>
+ 
+ #include <QDir>
+ #include <QTextCodec>
+Index: freemedforms-0.7.3/freemedforms/libs/libs.pro
+===================================================================
+--- freemedforms-0.7.3.orig/freemedforms/libs/libs.pro
++++ freemedforms-0.7.3/freemedforms/libs/libs.pro
+@@ -11,6 +11,5 @@ SUBDIRS += $${LIBSPATH}/translationutils
+     $${LIBSPATH}/calendar \
+     $${LIBSPATH}/medicalutils \
+     $${LIBSPATH}/medintuxutils \
+-    $${LIBSPATH}/../contrib/quazip \
+     $${LIBSPATH}/datapackutils
+ 
+Index: freemedforms-0.7.3/libs/datapack.pri
+===================================================================
+--- freemedforms-0.7.3.orig/libs/datapack.pri
++++ freemedforms-0.7.3/libs/datapack.pri
+@@ -5,4 +5,5 @@ CONFIG( debug, debug|release ) {
+     win32:LIBS   *= -lDataPack_d
+ } else {
+     LIBS  *= -lDataPack
++    LIBS  *= -lquazip
+ }
