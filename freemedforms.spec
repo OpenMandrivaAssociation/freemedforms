@@ -194,3 +194,28 @@ popd
 %files -n freediams-doc-fr
 %defattr(-,root,root,755)
 %{_docdir}/freediams/fr
+
+
+%changelog
+* Mon Jul 02 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.7.6-1
++ Revision: 807780
+- update to 0.7.6
+
+* Sat Jun 09 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.7.4-1
++ Revision: 803990
+- update to 0.7.4
+- build freediams from the same source package
+- separate documentation packages
+
+* Thu May 31 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.7.3-1
++ Revision: 801532
+- update to 0.7.3
+
+* Fri Mar 30 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.7.0-1
++ Revision: 788343
+- update to 0.7.0
+
+* Wed Dec 21 2011 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.6.0-1
++ Revision: 744158
+- imported package freemedforms
+
