@@ -3,7 +3,7 @@
 
 Name:		freemedforms
 Version:	0.7.6
-Release:	1
+Release:	2
 License:	GPLv3+
 Summary:	Electronical Medical Record
 Url:		http://www.freemedforms.com
