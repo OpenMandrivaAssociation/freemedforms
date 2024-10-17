@@ -6,7 +6,7 @@ Version:	0.7.6
 Release:	2
 License:	GPLv3+
 Summary:	Electronical Medical Record
-Url:		http://www.freemedforms.com
+Url:		https://www.freemedforms.com
 Group:		Office
 Source0:	http://freemedforms.googlecode.com/files/freemedformsfullsources-%{version}.tgz
 Patch0:		freemedforms-0.7.3-mdv-use_system_quazip.patch
