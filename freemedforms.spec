@@ -10,6 +10,7 @@ Url:		https://www.freemedforms.com
 Group:		Office
 Source0:	http://freemedforms.googlecode.com/files/freemedformsfullsources-%{version}.tgz
 Patch0:		freemedforms-0.7.3-mdv-use_system_quazip.patch
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	qt4-devel >= 4.6.2
 #BuildRequires:	quazip-devel
